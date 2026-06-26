@@ -245,17 +245,27 @@ Future improvements include:
 
 ---
 
-# Installation
+## Installation
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/soumilpatro/credit-risk-scoring-system.git
+```
 
+Navigate to the project directory:
+
+```bash
 cd credit-risk-scoring-system
+```
 
+Install the required dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
----
+Run the notebook from the `notebooks/` directory.
 
 # Author
 
