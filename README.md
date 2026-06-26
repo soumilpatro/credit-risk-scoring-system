@@ -1,96 +1,118 @@
 # Credit Risk Scoring System Using Machine Learning
 
-## Overview
+## Executive Summary
 
-This project predicts applicant credit risk using machine learning techniques and the German Credit Dataset.
+Credit risk assessment is one of the most critical processes in banking and financial services. Before approving a loan, financial institutions must evaluate an applicant's ability to repay the borrowed amount while minimizing the risk of default.
 
-The objective is to assist financial institutions in assessing loan applicants by identifying patterns associated with creditworthiness and repayment risk.
+This project presents an end-to-end **Credit Risk Scoring System** developed using Machine Learning and the German Credit Dataset. The solution demonstrates how predictive analytics can support lending decisions by classifying applicants into low-risk and high-risk categories based on their financial and demographic characteristics.
+
+The project covers the complete machine learning lifecycle, including data preprocessing, exploratory data analysis (EDA), feature engineering, model development, evaluation, and business interpretation of results. Rather than replacing human judgment, the model is designed as a **decision-support system** that assists financial institutions in making faster, more consistent, and data-driven credit approval decisions.
 
 ---
 
-## Dataset
+# Business Problem
 
-* German Credit Dataset
-* 1000 applicant records
-* 20 input features
-* 1 target variable (Credit Risk)
+Loan defaults expose banks and financial institutions to significant financial losses, increased provisioning requirements, and operational risk. Traditional manual credit assessments may be time-consuming and inconsistent, particularly when processing a large number of loan applications.
 
-Features include:
+Financial institutions require intelligent decision-support systems that can evaluate applicants objectively while improving the speed, consistency, and accuracy of credit risk assessment.
+
+---
+
+# Business Objectives
+
+The primary objectives of this project are:
+
+* Develop a machine learning model to classify loan applicants based on credit risk.
+* Compare multiple classification algorithms to determine the most suitable model.
+* Identify the key factors influencing customer creditworthiness.
+* Demonstrate how predictive analytics can improve banking decision-making.
+* Showcase the application of machine learning in financial risk management.
+
+---
+
+# Solution Overview
+
+The project implements an end-to-end machine learning workflow that transforms raw customer data into actionable credit risk predictions.
+
+The solution consists of:
+
+* Data preprocessing and cleaning
+* Exploratory Data Analysis (EDA)
+* Feature engineering
+* Model training
+* Model evaluation
+* Feature importance analysis
+* Business interpretation of results
+
+The final model is intended to support loan officers by providing an additional layer of analytical insight during the credit approval process.
+
+---
+
+# Dataset
+
+**Dataset:** German Credit Dataset
+
+**Source:** UCI Machine Learning Repository
+
+### Dataset Summary
+
+* Total Records: **1000**
+* Input Features: **20**
+* Target Variable: **Credit Risk**
+
+### Key Features
 
 * Checking Account Status
 * Credit History
-* Credit Amount
 * Loan Duration
+* Credit Amount
 * Savings Account Status
 * Employment Duration
+* Personal Status
 * Age
 * Housing
 * Existing Credits
+* Job Category
 
 ---
 
-## Project Workflow
+# Project Workflow
 
-1. Data Loading and Cleaning
-2. Exploratory Data Analysis (EDA)
-3. Train-Test Split
-4. Logistic Regression Model
-5. Random Forest Model
-6. Model Comparison
-7. Feature Importance Analysis
-8. Business Insights
-
----
-
-## Models Used
-
-### Logistic Regression
-
-Accuracy: **75.0%**
-
-### Random Forest
-
-Accuracy: **73.5%**
-
-Logistic Regression achieved slightly better performance and was selected as the preferred model.
-
----
-
-## Key Findings
-
-The most influential features affecting credit risk were:
-
-1. Credit Amount
-2. Checking Account Status
-3. Loan Duration
-4. Age
-5. Credit History
-
-These findings align with real-world banking practices where lenders evaluate financial stability, repayment history, and loan characteristics before approving credit.
+```
+Loan Applicant Data
+        │
+        ▼
+Data Cleaning & Preprocessing
+        │
+        ▼
+Exploratory Data Analysis
+        │
+        ▼
+Feature Engineering
+        │
+        ▼
+Train-Test Split
+        │
+        ▼
+Model Training
+(Logistic Regression & Random Forest)
+        │
+        ▼
+Model Evaluation
+        │
+        ▼
+Feature Importance Analysis
+        │
+        ▼
+Credit Risk Prediction
+        │
+        ▼
+Business Decision Support
+```
 
 ---
 
-## Results
-
-### Credit Risk Distribution
-
-![Credit Risk Distribution](results/credit_risk_distribution.png)
-
-### Credit Amount Distribution
-
-![Credit Amount Distribution](results/credit_amount_distribution.png)
-
-### Age Distribution
-
-![Age Distribution](results/age_distribution.png)
-
-### Feature Importance
-
-![Feature Importance](results/feature_importance.png)
-
----
-
-## Technologies Used
+# Technologies Used
 
 * Python
 * Pandas
@@ -101,40 +123,150 @@ These findings align with real-world banking practices where lenders evaluate fi
 
 ---
 
-## Repository Structure
+# Machine Learning Models
 
-```text
+## Logistic Regression
+
+* Accuracy: **75.0%**
+
+### Advantages
+
+* Highly interpretable
+* Fast training time
+* Suitable for regulated financial environments
+* Easy to explain lending decisions
+
+---
+
+## Random Forest
+
+* Accuracy: **73.5%**
+
+### Advantages
+
+* Captures complex relationships
+* Robust against overfitting
+* Handles non-linear patterns effectively
+
+---
+
+## Model Comparison
+
+| Model               | Accuracy  |
+| ------------------- | --------- |
+| Logistic Regression | **75.0%** |
+| Random Forest       | 73.5%     |
+
+Although Random Forest is a powerful ensemble learning technique, Logistic Regression achieved slightly higher predictive accuracy on this dataset while also providing greater interpretability. In financial institutions, interpretability is often preferred because lending decisions must be transparent and explainable to regulators and customers.
+
+---
+
+# Key Insights
+
+The analysis identified several variables that significantly influence applicant creditworthiness:
+
+* Credit Amount
+* Checking Account Status
+* Loan Duration
+* Age
+* Credit History
+
+These findings align with real-world banking practices where financial behaviour, repayment history, and existing liabilities play a major role in determining lending risk.
+
+---
+
+# Results
+
+The project includes the following analyses:
+
+* Credit Risk Distribution
+* Credit Amount Distribution
+* Applicant Age Distribution
+* Correlation Analysis
+* Feature Importance Visualization
+* Model Performance Comparison
+
+---
+
+# Business Impact
+
+This project demonstrates how machine learning can support financial institutions by:
+
+* Improving consistency in credit risk assessment.
+* Assisting loan officers with data-driven decision-making.
+* Identifying high-risk applicants before loan approval.
+* Supporting portfolio risk management.
+* Reducing manual effort in the credit evaluation process.
+* Enhancing operational efficiency through predictive analytics.
+
+---
+
+# Repository Structure
+
+```
 credit-risk-scoring-system/
 
 ├── data/
+│   ├── raw/
+│   └── processed/
+│
 ├── notebooks/
-├── results/
+│   └── credit_risk_analysis.ipynb
+│
+├── outputs/
+│   ├── figures/
+│   ├── reports/
+│   └── models/
+│
 ├── docs/
+│
+├── screenshots/
+│
 ├── README.md
-└── requirements.txt
+├── requirements.txt
+├── LICENSE
+└── .gitignore
 ```
 
 ---
 
-## Business Impact
+# Future Enhancements
 
-This project demonstrates how machine learning can support:
+Future improvements include:
 
-* Credit Risk Assessment
-* Loan Approval Decisions
-* Risk Segmentation
-* Portfolio Quality Improvement
-* Financial Decision-Making
+* Address class imbalance using SMOTE.
+* Perform hyperparameter optimization.
+* Evaluate additional metrics such as ROC-AUC, Precision, Recall, and F1-score.
+* Implement advanced ensemble models such as XGBoost and LightGBM.
+* Incorporate Explainable AI (SHAP/LIME) for transparent predictions.
+* Develop an interactive Streamlit dashboard.
+* Deploy the model as a REST API for integration into banking systems.
+* Retrain the model using larger and more diverse financial datasets.
 
 ---
 
-## Future Improvements
+# Installation
 
-* Handle class imbalance using SMOTE
-* Hyperparameter tuning
-* ROC-AUC analysis
-* Gradient Boosting and XGBoost models
-* Web application deployment
+```bash
+git clone https://github.com/soumilpatro/credit-risk-scoring-system.git
 
+cd credit-risk-scoring-system
+
+pip install -r requirements.txt
 ```
-```
+
+---
+
+# Author
+
+**Soumil Patro**
+
+Bachelor of Engineering – Computer Science & Business Systems
+
+Areas of Interest:
+
+* Financial Analytics
+* Business Consulting
+* Banking Technology
+* Machine Learning
+* Risk Analytics
